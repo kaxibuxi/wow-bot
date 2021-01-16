@@ -18,6 +18,12 @@ client.on('message', msg => {
 //OTOCEVAP KISMI
 });
 client.on('message', msg => {
+  if (msg.content.toLowerCase() === prefix +'kapak') {
+    msg.delete()
+    msg.channel.send('<:kapakk:796809495355326474> ') 
+  }
+});
+client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sea') {
     msg.channel.send('ase')
   }
