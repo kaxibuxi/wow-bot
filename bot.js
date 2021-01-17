@@ -5,6 +5,9 @@ const servers={
 
 }
 let prefix = "wow "
+let yapimciid = "791977957010702367"
+let yapimcinick = "developer kedy"
+let yapımcıtag = "developer kedy#9372"
 
 //EĞLENCE KISMI
 client.on('message', msg => {
@@ -15,17 +18,66 @@ client.on('message', msg => {
         url: msg.author.displayAvatarURL()
     }}});
   };
-//OTOCEVAP KISMI
+});
+client.on('message', msg => {
+  if (msg.content === prefix +'botavatar') {
+    msg.channel.send({embed: {
+      color: 0x0,
+      image: {
+        url: "https://cdn.discordapp.com/avatars/791977957010702367/802cd9bde5db65319cf287d8cf5ce04e.png?size=128"
+    }}});
+  };
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'kapak') {
     msg.delete()
-    msg.channel.send('<:kapakk:796809495355326474> ') 
+    msg.channel.send('<:kapakk:796809495355326474>')
   }
 });
 client.on('message', msg => {
+  if (msg.content.toLowerCase() === prefix +'dogedance') {
+    msg.delete()
+    msg.channel.send('<a:congadogeParrot:800041404298428446><a:congadogeParrot:800041404298428446><a:congadogeParrot:800041404298428446>')
+  }
+});
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === prefix +'dogebread') {
+    msg.delete()
+    msg.channel.send('<:doge_twinkie1:800042400239845429><:doge_twinkie2:800042475687116860><:doge_twinkie3:800042581034664006>')
+  }
+});
+//sa as
+client.on('message', msg => {
   if (msg.content.toLowerCase() === 'sea') {
-    msg.channel.send('ase')
+    msg.react("🇦")
+    msg.react("🇸")
+    msg.react("🇪")
+    msg.react("🇭")
+    msg.react("🇬")
+    
+  }
+});
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'sa') {
+    msg.react("🇦")
+    msg.react("🇸")
+    msg.react("🇭")
+    msg.react("🇬")
+  }
+});
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'selamın aleyküm') {
+    msg.react("🇦")
+    msg.react("🇸")
+    msg.react("🇭")
+    msg.react("🇬")
+  }
+});
+//oylama
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === prefix +'oylama') {
+    msg.react("⬆️")
+    msg.react("⬇️")
   }
 });
 //KULLANICI İŞLEMLERİ
@@ -65,13 +117,12 @@ client.on('message', msg => {
     msg.channel.send(`${client.guilds.cache.size} sunucuda yer alıyorum. wow.`);
   }
 });
-//deneme
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'sil') {
-    msg.channel.send('mesajlar siliniyor...')
+    msg.channel.send('20 mesaj mesaj uazaya yollandı!')
     msg.delete()
-    msg.channel.bulkDelete(100)
-    msg.edit(`100 mesaj mesaj uazaya yollandı! wow.`);
+    msg.channel.bulkDelete(20)
+    msg.edit(`20 mesaj mesaj uazaya yollandı! wow.`);
   }
 });
 //DAVET
@@ -82,6 +133,16 @@ client.on('message', msg => {
       title: "davet linki",
       url: "https://discord.com/oauth2/authorize?client_id=791977957010702367&scope=bot&permissions=8",
       description: `**beni gerçekten de davet mi ediyorsun. wow.**.`,
+  }});
+}});
+//YARDIM
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === prefix +'yardım') {
+    msg.reply({embed: {
+      color: 0x0,
+      title: `**${msg.author.username}**'e özel Yardım menüsü`,
+      url: "",
+      description: `> **Kullanıcı işlemleri**\n${prefix}id\n${prefix}nick-${prefix}kullanıcıadı\n${prefix}tag\n\n> **Eğlence Komutları**\n${prefix}bilmece\n${prefix}pp\n${prefix}zar\n${prefix}avatar\n${prefix}botavatar\n${prefix}dogedance\n${prefix}dogebread\n${prefix}oylama\n\n`,
   }});
 }});
 //RANDOM KISMI
@@ -163,6 +224,25 @@ client.on ('message', msg => {
               });
 }});
 client.on ('message', msg => {
+  if (msg.content === prefix +'zar') {
+    msg.reply(
+      "Zarı attım 🎲"
+      )
+      .then(message => {
+        var espriler = [
+          "🎲 1",
+"🎲 2",
+"🎲 3",
+"🎲 4",
+"🎲 5",
+"🎲 6",
+        ];
+        var espri = espriler[Math.floor(Math.random() * espriler.length)];
+        message.edit(`${espri}`);
+              });
+}});
+
+client.on ('message', msg => {
   if (msg.content === prefix +'pp') {
     msg.reply(
       "pp arşivinden ppler çalınıyor..."
@@ -206,4 +286,4 @@ client.on ('message', msg => {
         message.edit(`${espri}`);
               });
 }});
-client.login(`NzkxOTc3OTU3MDEwNzAyMzY3.X-XA8w.EpzwUSJj12zBJPplWgPV1xRt_9A`);
+client.login(`NzkxOTc3OTU3MDEwNzAyMzY3.X-XA8w.1AOOovq4mg9gPHP2ROTty76T-rQ`);
