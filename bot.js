@@ -1,17 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 require('./util/eventloader')(client);
-const servers={
-
-}
 let prefix = "wow "
-let yapimciid = "791977957010702367"
-let yapimcinick = "developer kedy"
-let yapımcıtag = "developer kedy#9372"
 
 //EĞLENCE KISMI
 client.on('message', msg => {
-  console.log(`\n\n\nKullanıcı Bilgileri:\nTag:${msg.author.tag} İd:${msg.author.id}\n\nKanal bilgileri:\nKanal İsmi:${msg.channel.name} Kanal İd:${msg.channel.id}\n\nMesajı: ${msg}`)
+  console.log(`${msg.author.tag} ${msg.author.id} @ ${msg.channel.name} ${msg.channel.id}:\n${msg}\n`)
 })
 client.on('message', msg => {
   if (msg.content === prefix +'avatar') {
@@ -59,9 +53,9 @@ client.on('message', msg => {
   }
 });
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === prefix +'owo cash') {
+  if (msg.content.toLowerCase() === prefix +'f!inv') {
     msg.delete()
-    msg.channel.send("owo cash")
+    msg.channel.send("f!inv")
     
   }
 });
@@ -84,7 +78,7 @@ client.on('message', msg => {
 //oylama
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'oylama') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi oylama komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi oylama komutunu kullandı.\n`)
     msg.react("⬆️")
     msg.react("⬇️")
   }
@@ -92,51 +86,51 @@ client.on('message', msg => {
 //KULLANICI İŞLEMLERİ
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'id') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi id komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi id komutunu kullandı.\n`)
     msg.channel.send(msg.author.id)
   }
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'nick') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi nick komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi nick komutunu kullandı.\n`)
     msg.channel.send(msg.author.username)
   }
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'username') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi username komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi username komutunu kullandı.\n`)
     msg.channel.send(msg.author.username)
   }
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'kullanıcıadı') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi kullanıcıadı komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi kullanıcıadı komutunu kullandı.\n`)
     msg.channel.send(msg.author.username)
   }
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'tag') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi tag komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi tag komutunu kullandı.\n`)
     msg.channel.send(msg.author.tag)
   }
 });
 //sunucu. wow.
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'server') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi server komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi server komutunu kullandı.\n`)
     msg.channel.send(`${client.guilds.cache.size} server yer alıyorum. wow.`);
   }
 });
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'sunucu') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi sunucu komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi sunucu komutunu kullandı.\n`)
     msg.channel.send(`${client.guilds.cache.size} sunucuda yer alıyorum. wow.`);
   }
 });
 //DAVET
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'davet') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi davet komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi davet komutunu kullandı.\n`)
     msg.reply({embed: {
       color: 0x0,
       title: "davet linki",
@@ -147,7 +141,7 @@ client.on('message', msg => {
 //YARDIM
 client.on('message', msg => {
   if (msg.content.toLowerCase() === prefix +'yardım') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi yardım komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi yardım komutunu kullandı.\n`)
     msg.reply({embed: {
       color: 0x0,
       title: `**${msg.author.username}**'e özel Yardım menüsü`,
@@ -159,7 +153,7 @@ client.on('message', msg => {
 //RANDOM KISMI
 client.on ('message', msg => {
   if (msg.content === prefix +'yazıtura') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi yazıtura komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi yazıtura komutunu kullandı.\n`)
     msg.reply(
       "Para havada dönüyor. <a:coinspin:796368476826238976>"
       )
@@ -175,7 +169,7 @@ client.on ('message', msg => {
 
 client.on ('message', msg => {
   if (msg.content === prefix +'bilmece') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi bilmece komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi bilmece komutunu kullandı.\n`)
     msg.reply(
       "çok gizli bilmece arşivinden bilmecelri çalıyorum."
       )
@@ -238,7 +232,7 @@ client.on ('message', msg => {
 }});
 client.on ('message', msg => {
   if (msg.content === prefix +'zar') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi server zar kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi server zar kullandı.\n`)
     msg.reply(
       "Zarı attım 🎲"
       )
@@ -258,7 +252,7 @@ client.on ('message', msg => {
 
 client.on ('message', msg => {
   if (msg.content === prefix +'pp') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi pp komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi pp komutunu kullandı.\n`)
     msg.react("<:doruland:764859864118984764>")
     msg.reply(
       "pp arşivinden ppler çalınıyor..."
@@ -320,7 +314,7 @@ client.on ('message', msg => {
 
 client.on ('message', msg => {
   if (msg.content.toLowerCase() === prefix +'slots') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi slots komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi slots komutunu kullandı.\n`)
     msg.reply(
       "slot mainası çalıştırıldı..."
       )
@@ -352,7 +346,7 @@ client.on ('message', msg => {
 
 client.on ('message', msg => {
   if (msg.content.toLowerCase() === prefix +'s') {
-    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi slots komutunu kullandı.`)
+    console.log(`\n${msg.author.tag} isimli ${msg.author.id} id'li kişi slots komutunu kullandı.\n`)
     msg.reply(
       "slot mainası çalıştırıldı..."
       )
@@ -382,4 +376,4 @@ client.on ('message', msg => {
               });
 }});
 
-client.login(`NzkxOTc3OTU3MDEwNzAyMzY3.X-XA8w.rJVHenzkG-7_aXCdT7AqlUiMLRY`);
+client.login(`NzkxOTc3OTU3MDEwNzAyMzY3.X-XA8w.Lavty95QUqwNWjKf9DM5acb6xCY`);
